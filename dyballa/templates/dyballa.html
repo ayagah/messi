@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color:whitesmoke;
+    color: #333;
+}
+
+
+header {
+    background-color: blue;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav {
+    background-color: #34495e;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #1abc9c;
+    border-radius: 5px;
+}
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+
+.card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card h1, .card h2, .card h3, .card h4 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+.card p {
+    line-height: 1.6;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+form label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+form input[type="text"] {
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 400px;
+}
+
+form input[type="submit"] {
+    background-color: #1abc9c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+form input[type="submit"]:hover {
+    background-color: #16a085;
+    border-radius:5px;
+}
+
+select {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+}
+
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+    
+
+
+
+    </style>
+</head>
+<body>
+    <header>TRAIL BLAZERS TELECOMMUNICATIONS LTD</header>
+    <nav>
+        <ul>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Our services</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Privacy policy</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="card">
+            <h1>About us </h1>
+            <p>We are a limited company dealing in telecommunication services registered under industrial <br>
+                act no.10378BC.We  are situated along Ngong' Road ,Junction mall.<br>
+                 P.O box 64757 Dagoreti, Nairobi.
+            </p>
+        </div>
+            <div class="card">
+            <h2>Our Services</h2>
+            <p>We offer quality services on web development services,software engineering,Cloud <br>
+               computing,Electronic repair services,Computer lessons and Machine Learning.
+            </p>
+        </div>
+        <div class="card">
+            <h3>Contact</h3>
+            <p>You can contact us on 24 hour service line on the following <br>
+                1.Safaricom-079233250 <br>
+                2.Telkom-0778698137<br>
+                3.Airtel-0751506434<br>
+                helpline 0798506434
+            </p>
+        </div>
+        <div class="card">
+            <h4>Privacy policy</h4>
+            <p>none in particular</p>
+        </div>
+
+        </div>
+    </div>
+    <header>VACCANCY FOR INTERNSHIP AVAILABLE</header>
+    <p>Fill in the form below to apply:</p>
+    <form action="/submit" method="post">
+        <label for="Name">Name:</label>
+        <input type="text"><br>
+        <label for="Phone number">Phone Number:</label>
+        <input type="text"><br>
+        <label for="Age">Age:</label>
+        <input type="text"><br>
+        <label for="Institution">Instituition:</label>
+        <input type="text"><br>
+        <label for="course">Course:</label>
+        <input type="text"><br>
+        <label for="year">Year:</label>
+        <input type="text"><br>
+        <input type="submit" value="submit">
+    </form>
+    <select name="postion" id="position">
+        <option value="Available Positions">Available Positions</option>
+        <option value="Manager 1">Manager</option>
+        <option value="Human resource manager ">Human resource manager(6)</option>
+        <option value="Technicians">Technicians (20)</option>
+        <option value="Support Staff">Support Staff (30)</option>
+        <option value=""></option>
+    </select>
+    <footer>
+        <p>ISO ESTABLISHED IN 2029 &copy;All rights reserved.</p>
+    </footer>
+    <script>
+        // Form Validation
+        document.querySelector('form').addEventListener('submit', function (event) {
+            const inputs = document.querySelectorAll('form input[type="text"]');
+            let isValid = true;
+
+            inputs.forEach(input => {
+                if (input.value.trim() === '') {
+                    alert('Please fill in all fields');
+                    input.focus();
+                    isValid = false;
+                }
+            });
+
+            if (!isValid) {
+                event.preventDefault();
+            }
+        });
+
+        // Smooth Scroll for Navigation Links
+        document.querySelectorAll('nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function (event) {
+                event.preventDefault();
+                const targetId = this.getAttribute('href').slice(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Alert on Dropdown Selection
+        document.getElementById('position').addEventListener('change', function () {
+            if (this.value !== "Available Positions" && this.value !== "") {
+                alert(`You have selected: ${this.options[this.selectedIndex].text}`);
+            }
+        });
+    </script>
+</body>
+</html>
